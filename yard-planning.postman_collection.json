@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "6936eca9-b2f4-466a-ab3a-43b04eba2278",
+		"name": "Yard Planning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42885321"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Container",
+			"item": [
+				{
+					"name": "Check Suggestion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"yard\": \"YRD-UTAMA\",\r\n  \"container_number\": \"NEW000012\",\r\n  \"block\": \"LC01\",\r\n  \"container_size\": \"40ft\",\r\n  \"container_height\": \"9.6ft\",\r\n  \"container_type\": \"DRY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/suggestion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"suggestion"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"yard\": \"YRD-UTAMA\",\r\n  \"container_number\": \"NEW000011\",\r\n  \"block\": \"LC01\",\r\n  \"container_size\": \"20ft\",\r\n  \"container_height\": \"8.6ft\",\r\n  \"container_type\": \"DRY\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/suggestion",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"suggestion"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Nov 2025 10:20:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "143"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Suggested position successfully retrieved.\",\n    \"data\": {\n        \"suggested_position\": {\n            \"block\": \"LC01\",\n            \"slot\": 2,\n            \"row\": 1,\n            \"tier\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Placement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"yard\": \"YRD-UTAMA\",\r\n    \"container_number\": \"NEW000012\",\r\n    \"block\": \"LC01\",\r\n    \"slot\": 7,\r\n    \"row\": 1,\r\n    \"tier\": 1,\r\n    \"container_size\": \"40ft\",\r\n    \"container_height\": \"9.6ft\",\r\n    \"container_type\": \"DRY\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/placement",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"placement"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"yard\": \"YRD-UTAMA\",\r\n    \"container_number\": \"NEW000012\",\r\n    \"block\": \"LC01\",\r\n    \"slot\": 7,\r\n    \"row\": 1,\r\n    \"tier\": 1,\r\n    \"container_size\": \"40ft\",\r\n    \"container_height\": \"9.6ft\",\r\n    \"container_type\": \"DRY\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/placement",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"placement"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Nov 2025 10:23:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success\"\n}"
+						},
+						{
+							"name": "Error slot exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"yard\": \"YRD-UTAMA\",\r\n    \"container_number\": \"NEW000012\",\r\n    \"block\": \"LC01\",\r\n    \"slot\": 7,\r\n    \"row\": 1,\r\n    \"tier\": 1,\r\n    \"container_size\": \"40ft\",\r\n    \"container_height\": \"9.6ft\",\r\n    \"container_type\": \"DRY\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/placement",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"placement"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Nov 2025 10:23:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"ERR0001\",\n    \"status_code\": 500,\n    \"status\": false,\n    \"message\": \"Container number NEW000012 is already placed in the Yard.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Pickup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\r\n\t\"yard\": \"YRD-UTAMA\",\r\n    \"container_number\": \"NEW000012\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/pickup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pickup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\t\r\n\t\"yard\": \"YRD-UTAMA\",\r\n    \"container_number\": \"NEW000012\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/pickup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pickup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Nov 2025 10:24:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success\"\n}"
+						},
+						{
+							"name": "Error container not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\t\r\n\t\"yard\": \"YRD-UTAMA\",\r\n    \"container_number\": \"NEW000012\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/pickup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pickup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Nov 2025 10:24:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"ERR0003\",\n    \"status_code\": 400,\n    \"status\": false,\n    \"message\": \"Container not found at any position or already picked up.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
