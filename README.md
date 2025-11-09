@@ -81,5 +81,13 @@ Start the application with:
 ```bash
 go run main.go
 ```
+The application should now be accessible at http://localhost:3000
 
 ---
+
+## Test the APIs
+
+Import ```yard-planning.postman_collection.json``` into Postman. . Add ```localhost:3000``` for baseUrl variable and you can start to test for each endpoint.
+
+---
+
