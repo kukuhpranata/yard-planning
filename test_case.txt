@@ -1,0 +1,133 @@
+Test Case
+
+/suggestion
+1. Sukses (20ft)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "NEW000011",
+  "block": "LC01",
+  "container_size": "20ft",
+  "container_height": "8.6ft",
+  "container_type": "DRY"
+}
+
+2. Sukses (40ft)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "NEW000012",
+  "block": "LC01",
+  "container_size": "40ft",
+  "container_height": "9.6ft",
+  "container_type": "DRY"
+}
+
+3. Block Opsional (Seluruh Yard)
+{
+  "yard": "YRD-CADANGAN",
+  "container_number": "NEW000013",
+  "container_size": "20ft",
+  "container_height": "8.6ft",
+  "container_type": "DRY"
+}
+
+4. Konflik (Sudah Ditempatkan)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "ALFI000001",
+  "block": "LC01",
+  "container_size": "20ft",
+  "container_height": "8.6ft",
+  "container_type": "DRY"
+}
+
+
+/placement
+1. Sukses (20ft)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "NEW000014",
+  "block": "LC01",
+  "slot": 2,
+  "row": 1,
+  "tier": 1,
+  "container_size": "20ft",
+  "container_height": "8.6ft",
+  "container_type": "DRY"
+}
+
+2. Sukses (40ft)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "NEW000015",
+  "block": "LC01",
+  "slot": 3,
+  "row": 1,
+  "tier": 1,
+  "container_size": "40ft",
+  "container_height": "9.6ft",
+  "container_type": "DRY"
+}
+
+3. Konflik Posisi (40ft Overlap)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "NEW000016",
+  "block": "LC01",
+  "slot": 4,
+  "row": 1,
+  "tier": 1,
+  "container_size": "40ft",
+  "container_height": "9.6ft",
+  "container_type": "DRY"
+}
+
+4. Konflik Posisi (Slot N+1 terisi)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "NEW000017",
+  "block": "LC01",
+  "slot": 5,
+  "row": 1,
+  "tier": 1,
+  "container_size": "40ft",
+  "container_height": "9.6ft",
+  "container_type": "DRY"
+}
+
+5. Kontainer Sudah Ada
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "ALFI000001",
+  "block": "LC01",
+  "slot": 2,
+  "row": 1,
+  "tier": 1,
+  "container_size": "20ft",
+  "container_height": "8.6ft",
+  "container_type": "DRY"
+}
+
+/pickup
+1. Sukses (Open Top)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "ALFI000005"
+}
+
+2. Sukses (Tumpukan paling atas)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "ALFI000010"
+}
+
+3. Konflik (Tertutup)
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "ALFI000002"
+}
+
+4. Kontainer Tidak Ada
+{
+  "yard": "YRD-UTAMA",
+  "container_number": "NONEXIST00"
+}
