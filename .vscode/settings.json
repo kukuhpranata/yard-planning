@@ -1,0 +1,29 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3309,
+            "driver": "MySQL",
+            "name": "go-gin-library",
+            "database": "go-library",
+            "username": "be_go_library",
+            "password": "12345678"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5435,
+            "driver": "PostgreSQL",
+            "name": "yard-planning",
+            "database": "yard-planning",
+            "username": "dev",
+            "password": "your_strong_password"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+
+services:
+  db:
+    image: postgres:latest
+    container_name: yard_planning_db
+    
+    environment:
+      POSTGRES_PASSWORD: your_strong_password
+      POSTGRES_USER: dev
+      POSTGRES_DB: yard-planning
+      
+    ports:
+      - "5435:5432" 
+      
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    restart: always
+    
+volumes:
+  postgres_data:
